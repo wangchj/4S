@@ -126,13 +126,13 @@ class EventController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $event = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->eventId]);
+        if ($event->load(Yii::$app->request->post()) && $event->save()) {
+            return $this->redirect(['view', 'id' => $event->eventId]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'event' => $event,
             ]);
         }
     }
