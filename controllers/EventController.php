@@ -128,13 +128,18 @@ class EventController extends Controller
     {
         $event = $this->findModel($id);
 
-        if ($event->load(Yii::$app->request->post()) && $event->save()) {
-            return $this->redirect(['view', 'id' => $event->eventId]);
-        } else {
-            return $this->render('update', [
-                'event' => $event,
-            ]);
+        if ($event->load(Yii::$app->request->post()))
+        {
+            if(trim($event->season) != '')
+                $this->setMonth($event);
+            
+            if($event->save())
+                return $this->redirect(['view', 'id' => $event->eventId]);
         }
+
+        return $this->render('update', [
+            'event' => $event,
+        ]);
     }
 
     /**
