@@ -39,13 +39,13 @@ AppAsset::register($this);
             ['label' => 'Events', 'url' => ['event/index']],
             ['label' => 'Refs', 'url' => ['ref/index']],
             ['label' => 'Event Refs', 'url' => ['event-ref/index']],
-            // Yii::$app->user->isGuest ?
-            //     ['label' => 'Login', 'url' => ['/site/login']] :
-            //     [
-            //         'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            //         'url' => ['/site/logout'],
-            //         'linkOptions' => ['data-method' => 'post']
-            //     ],
+            Yii::$app->user->isGuest ?
+                ['label' => 'Login', 'url' => ['site/login']] :
+                [
+                    'label' => 'Logout',
+                    'url' => ['site/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ],
         ],
     ]);
     NavBar::end();

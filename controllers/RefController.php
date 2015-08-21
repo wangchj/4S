@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * RefController implements the CRUD actions for Ref model.
@@ -17,6 +18,10 @@ class RefController extends Controller
     public function behaviors()
     {
         return [
+            'access'=>[
+                'class'=>AccessControl::className(),
+                'rules'=>[['allow'=>true, 'actions'=>[], 'roles'=>['@']]]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

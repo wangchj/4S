@@ -21,3 +21,9 @@ create table EventRefs (
     foreign key (refId) references Refs(refId)
 );
 
+create table Users (
+    userId integer primary key,
+    email text not null unique,
+    hash text not null,
+    authKey text not null
+);
