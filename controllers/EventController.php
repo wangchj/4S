@@ -36,6 +36,7 @@ class EventController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Event::find()->orderBy('year ASC, month ASC, date ASC'),
+            'pagination' => ['pageSize' => -1]
         ]);
 
         return $this->render('index', [
