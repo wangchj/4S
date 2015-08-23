@@ -139,8 +139,12 @@ class EventController extends Controller
             if(trim($event->season) != '')
                 $this->setMonth($event);
             
-            if($event->save())
+            if($event->validate() && $event->save())
+            {
+                if(trim($event->refInput) != '')
+                    $this->saveRefs($event);
                 return $this->redirect(['view', 'id' => $event->eventId]);
+            }
         }
 
         return $this->render('update', [
