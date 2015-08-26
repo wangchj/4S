@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'season:ntext',
             'text:ntext',
+            'refInput'
         ],
     ]) ?>
 
