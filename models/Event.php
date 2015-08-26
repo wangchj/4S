@@ -71,4 +71,35 @@ class Event extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Ref::className(), ['refId' => 'refId'])->viaTable('EventRefs', ['eventId' => 'eventId']);
     }
+
+    public function getDateStr()
+    {
+        $res = $this->year;
+        if($this->season) {
+            $res .= " $this->season";
+        }
+        else if($this->month) {
+            $res .= " {$this->getMonthName()}";
+            if($this->date)
+                $res .= " $this->date";
+        }
+
+        return $res;
+    }
+
+    public function getMonthName()
+    {
+        if(!$this->month)
+            return '';
+
+        return (new \DateTime())->setDate($this->year, $this->month, 1)->format('F');
+    }
+
+    public function getMonthAbbr()
+    {
+        if(!$this->month)
+            return '';
+
+        return (new \DateTime())->setDate($this->year, $this->month, 1)->format('M');
+    }
 }

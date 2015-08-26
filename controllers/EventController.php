@@ -175,6 +175,11 @@ class EventController extends Controller
     protected function findModel($id)
     {
         if (($model = Event::findOne($id)) !== null) {
+            foreach($model->refs as $ref) {
+                if($model->refInput && $model->refInput != '')
+                    $model->refInput .= "\n";
+                $model->refInput .= $ref->url;
+            }
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

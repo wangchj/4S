@@ -9,9 +9,12 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\User;
+use app\models\Event;
 
 class SiteController extends Controller
 {
+    public $layout = 'public';
+    
     public function behaviors()
     {
         return [
@@ -48,9 +51,16 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($ys = null, $ye = null)
     {
-        return $this->render('index');
+        $query = Event::find()->orderBy("year ASC, month ASC, date ASC");
+
+        if($ys && is_int($ys))
+            $query->where("year >= $ys");
+        if($ye && is_int($ye))
+            $query->where("year <= $ye");
+
+        return $this->render('index', ['events'=>$query->all()]);
     }
 
     public function actionLogin()
