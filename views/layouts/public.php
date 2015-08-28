@@ -45,7 +45,7 @@ AppAsset::register($this);
                         $contr = Yii::$app->controller->id;
                         $route = Yii::$app->controller->route;
                     ?>
-                    <li class="<?=$route === 'site/timeline' ? 'active' : ''?>"><a href="<?=Url::to(['site/index'])?>">Timeline</a></li>
+                    <li class="<?=$route === 'site/timeline' ? 'active' : ''?>"><a href="<?=Url::to(['site/timeline', 'start'=>1935, 'end'=>1970])?>">Timeline</a></li>
                     <li class="<?=$route === 'site/references' ? 'active' : ''?>"><a href="<?=Url::to(['site/references'])?>">References</a></li>
                 </ul>
             </div>

@@ -11,6 +11,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'timeline/<start:\d{4}>-<end:\d{4}>' => 'site/timeline',
                 'timeline' => 'site/timeline',
                 'references' => 'site/references'
             ]

@@ -61,10 +61,10 @@ class SiteController extends Controller
     {
         $query = Event::find()->orderBy("year ASC, month ASC, date ASC");
 
-        if($start && is_int($start))
-            $query->where("year >= $start");
-        if($end && is_int($end))
-            $query->where("year <= $end");
+        if($start)
+            $query->andWhere("year >= $start");
+        if($end)
+            $query->andWhere("year <= $end");
 
         return $this->render('timeline', ['events'=>$query->all()]);
     }
