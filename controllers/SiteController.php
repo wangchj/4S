@@ -51,14 +51,19 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex($ys = null, $ye = null)
+    public function actionIndex()
+    {
+        return $this->redirect(['site/timeline']);
+    }
+
+    public function actionTimeline($start = null, $end = null)
     {
         $query = Event::find()->orderBy("year ASC, month ASC, date ASC");
 
-        if($ys && is_int($ys))
-            $query->where("year >= $ys");
-        if($ye && is_int($ye))
-            $query->where("year <= $ye");
+        if($start && is_int($start))
+            $query->where("year >= $start");
+        if($end && is_int($end))
+            $query->where("year <= $end");
 
         return $this->render('index', ['events'=>$query->all()]);
     }
