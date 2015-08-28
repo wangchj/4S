@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\Url;
+
 $this->title = "Timeline";
 ?>
 <style>
@@ -27,7 +29,12 @@ $this->title = "Timeline";
                         <td><?=$event->year?></td>
                         <td><?=$event->season ? $event->season : $event->getMonthAbbr()?></td>
                         <td><?=$event->date?></td>
-                        <td><?=str_replace("\n", '<br/>', $event->text)?></td>
+                        <td>
+                            <?=str_replace("\n", '<br/>', $event->text)?>
+                            <?php if(count($event->refs) != 0):?>
+                                [<?php for($i = 0; $i < count($event->refs); $i++): ?><?php if($i != 0) echo ', ';?><a href="<?=Url::to(['site/references'])?>#<?=$event->refs[$i]->refId?>"><?=$event->refs[$i]->refId?></a><?php endfor;?>]
+                            <?php endif;?>
+                        </td>
                     </tr>
                 <?php endforeach;?>
             </tbody>

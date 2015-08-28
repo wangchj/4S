@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\User;
 use app\models\Event;
+use app\models\Ref;
 
 class SiteController extends Controller
 {
@@ -65,7 +66,12 @@ class SiteController extends Controller
         if($end && is_int($end))
             $query->where("year <= $end");
 
-        return $this->render('index', ['events'=>$query->all()]);
+        return $this->render('timeline', ['events'=>$query->all()]);
+    }
+
+    public function actionReferences()
+    {
+        return $this->render('references', ['refs'=>Ref::find()->all()]);
     }
 
     public function actionLogin()

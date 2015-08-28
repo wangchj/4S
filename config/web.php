@@ -12,6 +12,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'timeline' => 'site/timeline',
+                'references' => 'site/references'
             ]
         ],
         'request' => [
