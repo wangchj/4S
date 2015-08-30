@@ -70,7 +70,7 @@ if($start && $end)
         </nav>
 
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-2">
     </div>
 </div>
 
