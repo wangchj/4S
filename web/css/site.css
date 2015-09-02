@@ -9,6 +9,25 @@ body {
     height: auto;
 }
 
+.col {
+	padding-left:15px;
+}
+
+@media (min-width: 992px) {
+	.col {
+	    padding-left:15px;
+	    padding-right:15px;
+	    margin-right:300px;
+	}
+
+	.col-300 {
+	    float:right;
+	    width:300px;
+	    padding-left:15px;
+	    /*padding-right:15px;*/
+	}
+}
+
 .footer {
     height: 60px;
     background-color: #f5f5f5;

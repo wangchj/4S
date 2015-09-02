@@ -15,14 +15,11 @@ if($start && $end)
     }
 </style>
 <div class="row">
-    <div class="col-sm-10">
-        <?php
-            //$start = ;
-            //$end = ;
-        ?>
-
+    <div class="col-md-10">
         <h1>Timeline<?=$start && $end ? " $start &ndash; $end" : ''?></h1>
-        
+    </div>
+<div class="row">
+	<div class="col-md-10">
         <nav>
             <ul class="pagination">
                 <li class="<?=$start==1935 && $end==1970 ? 'active' : ''?>"><a href="<?=Url::to(['site/timeline', 'start'=>1935, 'end'=>1970])?>">1935 &ndash; 1970</a></li>
@@ -32,7 +29,15 @@ if($start && $end)
                 <li class="<?=!$start && !$end ? 'active' : ''?>"><a href="<?=Url::to(['site/timeline'])?>">All</a></li>
             </ul>
         </nav>
-
+    </div>
+</div>
+<div class="row">
+	<div class="col-300 visible-md-block visible-lg-block">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-1786819164979340" data-ad-slot="8594776917"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+	<div class="col">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -70,7 +75,11 @@ if($start && $end)
         </nav>
 
     </div>
-    <div class="col-sm-2">
+</div>
+<div class="row visible-xs-block visible-sm-block">
+    <div class="col-xs-12">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1786819164979340" data-ad-slot="4622235716" data-ad-format="auto"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 </div>
-
