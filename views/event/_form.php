@@ -20,6 +20,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($event, 'season')->textInput() ?>
 
+    <?= $form->field($event, 'title')->textInput() ?>
+
     <?= $form->field($event, 'text')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($event, 'refInput')->textarea(['rows' => 6]) ?>

@@ -12,6 +12,7 @@ use Yii;
  * @property integer $month
  * @property integer $date
  * @property string $season
+ * @property string $title
  * @property string $text
  *
  * @property EventRef[] $eventRefs
@@ -36,7 +37,7 @@ class Event extends \yii\db\ActiveRecord
     {
         return [
             [['year', 'month', 'date'], 'integer'],
-            [['season', 'text', 'refInput'], 'string']
+            [['season', 'title', 'text', 'refInput'], 'string']
         ];
     }
 
@@ -52,6 +53,7 @@ class Event extends \yii\db\ActiveRecord
             'date' => 'Date',
             'season' => 'Season',
             'text' => 'Text',
+            'title' => 'Title',
             'refInput' => 'References'
         ];
     }

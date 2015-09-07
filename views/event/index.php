@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'month',
             'date',
             'season:ntext',
+            'title:ntext',
             'text:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'month',
             'date',
             'season:ntext',
+            'title:ntext',
             'text:ntext',
             'refInput:ntext'
         ],
