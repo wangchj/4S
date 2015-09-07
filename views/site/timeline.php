@@ -54,6 +54,10 @@ if($start && $end)
                         <td><?=$event->season ? $event->season : $event->getMonthAbbr()?></td>
                         <td><?=$event->date?></td>
                         <td>
+                            <?php if($event->title):?>
+                                <b><?=$event->title?></b><br/>
+                            <?php endif;?>
+
                             <?=str_replace("\n", '<br/>', $event->text)?>
                             <?php if(count($event->refs) != 0):?>
                                 [<?php for($i = 0; $i < count($event->refs); $i++): ?><?php if($i != 0) echo ', ';?><a href="<?=Url::to(['site/references'])?>#<?=$event->refs[$i]->refId?>"><?=$event->refs[$i]->refId?></a><?php endfor;?>]
