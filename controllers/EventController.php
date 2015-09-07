@@ -109,11 +109,16 @@ class EventController extends Controller
     {
         $urls = explode("\n", $event->refInput);
         foreach($urls as $url) {
+        	$url = trim($url);
+        	
+        	if($url == '')
+        		continue;
+
             $ref = Ref::findOne(['url'=>$url]);
             
             if(!$ref) {
                 $ref = new Ref();
-                $ref->url = trim($url);
+                $ref->url = $url;
                 $ref->save();
             }
 
