@@ -31,7 +31,7 @@ if($start && $end)
         </nav>
     </div>
 </div>
-<div class="">
+<div>
 	<div class="col-300 visible-md-block visible-lg-block">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-1786819164979340" data-ad-slot="8594776917"></ins>
