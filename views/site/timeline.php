@@ -18,7 +18,7 @@ if($start && $end)
     <div class="col-md-10">
         <h1>Timeline<?=$start && $end ? " $start &ndash; $end" : ''?></h1>
     </div>
-<div class="row">
+<div>
 	<div class="col-md-10">
         <nav>
             <ul class="pagination">
@@ -31,7 +31,7 @@ if($start && $end)
         </nav>
     </div>
 </div>
-<div class="row">
+<div class="">
 	<div class="col-300 visible-md-block visible-lg-block">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-1786819164979340" data-ad-slot="8594776917"></ins>
@@ -80,10 +80,12 @@ if($start && $end)
 
     </div>
 </div>
-<div class="row visible-xs-block visible-sm-block">
+
+
+<!-- div class="row visible-xs-block visible-sm-block">
     <div class="col-xs-12">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1786819164979340" data-ad-slot="4622235716" data-ad-format="auto"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-</div>
+</div -->
